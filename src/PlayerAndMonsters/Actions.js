@@ -1,23 +1,17 @@
 import { Monsters } from './Monsters'
+// import { RandomStage } from '../GameMode/GameModeStage'
+import { players } from './Player'
 
 
 // This should be recycled to be used  by monsters or players
-function isAttacking(monster) {
-    let armorClass = monster.armorClass // this should be the armorClass of the player or the monster, depends on who is reciving the attack
+function isAttacking(monster, player) {
+    let armorClass = players[0].armorClass // this should be the armorClass of the player or the monster, depends on who is reciving the attack
     let randomHit = Math.ceil(Math.random() * 20)
-    let isAttacking = false
 
-    if (randomHit < armorClass) {
-        console.log('Monster attack missed')
-        return
-    }
-    isAttacking = true
-    console.log(`The monster is Attacking ${isAttacking}`)
-    MonsterAttack(monster)
+    randomHit < armorClass ? console.log('Monster attack missed') : MonsterAttack(monster)
 }
 
 // attack used by Monster with multi-attack action like: Hezrou, abeloth, and pit fiend
-
 function MultiAttack(monster) {
     let monsterActions = monster.actions
     let attacks = []
@@ -82,6 +76,7 @@ function MultiAttack(monster) {
         attackName: attacks
     }
 
+    // console.log(`${monster.name} uses multi attack with a power of ${multiAttackWithDescription.multiAttackValue} `)
     console.log(multiAttackWithDescription)
     return multiAttackWithDescription
 }
@@ -119,10 +114,14 @@ export function MonsterAttack(monster) {
     }
     hitValue = diceSum + attackBonus
     attackChoice.push(attackName, hitValue)
+    // console.log(`${monster.name} use ${attackChoice[0]} with a power of ${attackChoice[1]} `)
     console.log(attackChoice)
 
     return attackChoice
 
 }
 
-console.log(MonsterAttack(Monsters[3]))
+// for (let i = 0; i < 11; i++) {
+//     console.log(isAttacking(Monsters[3], player1))
+
+// }

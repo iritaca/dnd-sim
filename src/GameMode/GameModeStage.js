@@ -55,6 +55,6 @@ export const RandomStage = (level) => {
     return (level, stage)
 }
 
-RandomStage('easy')
+// RandomStage('easy')
 // RandomStage('normal')
 // RandomStage('hard')
