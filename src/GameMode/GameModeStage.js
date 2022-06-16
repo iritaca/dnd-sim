@@ -4,7 +4,7 @@ import { GameModeList } from './GameModeList'
 
 import { FillMonsterArray } from '../PlayerAndMonsters/MonsterCreation'
 
-export const RandomStage = (level) => {
+const RandomStage = (level) => {
     let monsterList = FillMonsterArray()
     let stage = []
     let round = []
@@ -55,6 +55,18 @@ export const RandomStage = (level) => {
     return (level, stage)
 }
 
-// RandomStage('easy')
-// RandomStage('normal')
-// RandomStage('hard')
+export const SelectedLevel = (level) => {
+    // console.log(level)
+    // if (level === 'easy') {
+    //     return RandomStage('easy')
+    // }
+    // if (level === 'medium') {
+    //     return RandomStage('medium')
+    // }
+    // if (level === 'hard') {
+    //     return RandomStage('hard')
+    // }
+    return RandomStage('hard')
+
+
+}

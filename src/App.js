@@ -1,13 +1,13 @@
-import { RandomStage } from './GameMode/GameModeStage';
+import { RandomStage, SelectedLevel } from './GameMode/GameModeStage';
 import { MonsterAttack } from './PlayerAndMonsters/Actions';
 
 
 function App() {
   return (
 
-    // <RandomStage />
+    <SelectedLevel level='hard' />
 
-    <MonsterAttack />
+    // <MonsterAttack />
 
   );
 }
